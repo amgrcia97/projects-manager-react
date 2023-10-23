@@ -5,7 +5,7 @@ import App from './App';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.StrictMode>
+  // <React.StrictMode> Comentado para evitar o fetch 2X
     <App />
-  </React.StrictMode>
+  // </React.StrictMode>
 );
