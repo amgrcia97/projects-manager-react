@@ -1,5 +1,10 @@
 function Contact() {
-    return <h1>Contact</h1>
-  }
-  
-  export default Contact
+  return (
+    <section>
+      <h1>Contato</h1>
+      <p>Informações para contato</p>
+    </section>
+  );
+}
+
+export default Contact;

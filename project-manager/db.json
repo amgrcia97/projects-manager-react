@@ -7,14 +7,8 @@
         "id": "1",
         "name": "Infra"
       },
-      "cost": 1100,
+      "cost": 1000,
       "services": [
-        {
-          "name": "Novo Serviço",
-          "cost": "100",
-          "description": "Faz isso aqui",
-          "id": "166143f2-59b7-47a9-ba61-cf86821cf2f6"
-        },
         {
           "name": "Novo Serviço 2",
           "cost": "1000",
@@ -31,39 +25,8 @@
         "id": "2",
         "name": "Desenvolvimento"
       },
-      "cost": 10034,
-      "services": [
-        {
-          "name": "Contratar DEV",
-          "cost": "5000",
-          "description": "Vai fazer o site",
-          "id": "0762a5e0-29a3-41be-af9f-729bac7b65ae"
-        },
-        {
-          "name": "Contratar DEV",
-          "cost": "5000",
-          "description": "Vai fazer o site",
-          "id": "0762a5e0-29a3-41be-af9f-729bac7b65ae"
-        },
-        {
-          "name": "Teste",
-          "cost": "30",
-          "description": "FAz isso aqui",
-          "id": "379c445c-b453-4876-be93-1b352af33df4"
-        },
-        {
-          "name": "Teste33",
-          "cost": "3",
-          "description": "FAz isso aqui",
-          "id": "5a8ebb80-810c-4cd4-97e9-4ae18aa051f6"
-        },
-        {
-          "name": "Teste1",
-          "cost": "1",
-          "description": "Vai fazer o site",
-          "id": "84e0d530-ada4-411e-a9b8-034fd4c27e55"
-        }
-      ],
+      "cost": 0,
+      "services": [],
       "id": 2
     },
     {

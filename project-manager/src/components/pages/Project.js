@@ -1,4 +1,4 @@
-import { parse, v4 as uuidv4 } from 'uuid'
+import { v4 as uuidv4 } from 'uuid'
 import { useParams } from 'react-router-dom'
 import { useState, useEffect } from 'react'
 import styles from './Project.module.css'
@@ -95,7 +95,31 @@ function Project() {
       .catch((err) => console.log(err))
   }
 
-  function removeService() {}
+  function removeService(id, cost) {
+    setMessage('')
+    const servicesUpdated = project.services.filter(
+      (service) => service.id !== id
+    )
+    const projectUpdated = project
+    projectUpdated.services = servicesUpdated
+    projectUpdated.cost = parseFloat(projectUpdated.cost) - parseFloat(cost)
+
+    fetch(`http://localhost:5000/projects/${projectUpdated.id}`, {
+        method: 'PATCH',
+        headers: {
+            'Content-type': 'application/json'
+        },
+        body: JSON.stringify(projectUpdated),
+    })
+      .then((resp) => resp.json())
+      .then((data) => {
+        setProject(projectUpdated)
+        setServices(servicesUpdated)
+        setMessage('Serviço removido com sucesso!')
+        setType('success')
+      })
+      .catch((err) => console.log(err))
+  }
 
   function toggleProjectForm() {
     setShowProjectForm(!showProjectForm)
@@ -120,7 +144,7 @@ function Project() {
                 <div className={styles.project_info}>
                   <p><span>Categoria:</span> {project.category.name}</p>
                   <p><span>Total de Orçamento:</span> R${project.budget}</p>
-                  <p><span>Total utilizado:</span> {project.cost}</p>
+                  <p><span>Total utilizado:</span> R${project.cost}</p>
                 </div>
               ) : (
                 <div className={styles.project_info}>
